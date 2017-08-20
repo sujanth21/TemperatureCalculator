@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func temperatureEntered(_ sender: Any) {
+    }
+    
+    @IBAction func temperatureToggled(_ sender: Any) {
+    }
+    
+    
 }
 
