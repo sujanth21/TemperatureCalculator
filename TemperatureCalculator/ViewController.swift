@@ -34,10 +34,15 @@ class ViewController: UIViewController {
             let fahrenheit = Double(textField.text!)
             let celsius = (fahrenheit! - 32) / 1.8
             outputLabel.text = String(format: "%.2f Celsius", celsius)
+            
+            fahrenheitTempImageChange(temp: fahrenheit!)
+            
         } else if segCtrl.selectedSegmentIndex == 1 {
             let celsius = Double(textField.text!)
             let fahrenheit = (celsius! * 1.8) + 32
             outputLabel.text = String(format: "%.2f Fahrenheit", fahrenheit)
+            
+            celsiusTempImageChange(temp: celsius!)
         }
     }
     
@@ -54,6 +59,51 @@ class ViewController: UIViewController {
         }
     }
     
+    func celsiusTempImageChange(temp celsius: Double) {
+        
+        if celsius >= 120 {
+            imageField.image = UIImage(named: "Temp9.png")
+        } else if celsius >= 100 {
+            imageField.image = UIImage(named: "Temp8.png")
+        } else if celsius >= 80 {
+            imageField.image = UIImage(named: "Temp7.png")
+        } else if celsius >= 60 {
+            imageField.image = UIImage(named: "Temp6.png")
+        } else if celsius >= 40 {
+            imageField.image = UIImage(named: "Temp5.png")
+        } else if celsius >= 20 {
+            imageField.image = UIImage(named: "Temp4.png")
+        } else if celsius >= 0 {
+            imageField.image = UIImage(named: "Temp3.png")
+        } else if celsius >= -20 {
+            imageField.image = UIImage(named: "Temp2.png")
+        } else if celsius < -20 {
+            imageField.image = UIImage(named: "Temp1.png")
+        }
+    }
+    
+    func fahrenheitTempImageChange(temp fahrenheit: Double) {
+        
+        if fahrenheit >= 248 {
+            imageField.image = UIImage(named: "Temp9.png")
+        } else if fahrenheit >= 212 {
+            imageField.image = UIImage(named: "Temp8.png")
+        } else if fahrenheit >= 176 {
+            imageField.image = UIImage(named: "Temp7.png")
+        } else if fahrenheit >= 140 {
+            imageField.image = UIImage(named: "Temp6.png")
+        } else if fahrenheit >= 104 {
+            imageField.image = UIImage(named: "Temp5.png")
+        } else if fahrenheit >= 68 {
+            imageField.image = UIImage(named: "Temp4.png")
+        } else if fahrenheit >= 32 {
+            imageField.image = UIImage(named: "Temp3.png")
+        } else if fahrenheit >= -4 {
+            imageField.image = UIImage(named: "Temp2.png")
+        } else if fahrenheit < -4 {
+            imageField.image = UIImage(named: "Temp1.png")
+        }
+    }
     
 }
 
