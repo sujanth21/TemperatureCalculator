@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var formatLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var imageField: UIImageView!
+    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var segCtrl: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
