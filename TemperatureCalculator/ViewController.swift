@@ -28,9 +28,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func temperatureEntered(_ sender: Any) {
+        self.resignFirstResponder()
+        
+        if segCtrl.selectedSegmentIndex == 0 {
+            let fahrenheit = Double(textField.text!)
+            let celsius = (fahrenheit! - 32) / 1.8
+            outputLabel.text = String(format: "%.2f Celsius", celsius)
+        } else if segCtrl.selectedSegmentIndex == 1 {
+            let celsius = Double(textField.text!)
+            let fahrenheit = (celsius! * 1.8) + 32
+            outputLabel.text = String(format: "%.2f Fahrenheit", fahrenheit)
+        }
     }
     
     @IBAction func temperatureToggled(_ sender: Any) {
+        
+        if segCtrl.selectedSegmentIndex == 0 {
+            formatLabel.text = "Enter Fahrenheit"
+            textField.text = ""
+            outputLabel.text = "0 Celsius"
+        } else if segCtrl.selectedSegmentIndex == 1 {
+            formatLabel.text = "Enter Celsius"
+            textField.text = ""
+            outputLabel.text = "0 Fahrenheit"
+        }
     }
     
     
